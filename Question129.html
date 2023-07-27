@@ -1,0 +1,24 @@
+<!-- Q129) Write a JavaScript program to get removed elements from the end of a given array until the passed function returns true.
+Create a reversed copy of the array, using the spread operator (...) and Array.prototype.reverse().
+Loop through the reversed copy, using a for...of loop over Array.prototype.entries() until the returned value from the function is falsy.
+Return the removed elements, using Array.prototype.slice().
+The callback function, fn, accepts a single argument which is the value of the element. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to get removed elements from the end of a given array until the passed function returns true.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const takeRightWhile = (arr, func) => {
+            for (let i of arr.reverse().keys())
+            if (func(arr[i])) return arr.reverse().slice(arr.length - i, arr.length);
+            return arr;
+        };
+        console.log(takeRightWhile([1, 2, 3, 4], n=> n < 3));
+    </script>
+</body>
+</html>

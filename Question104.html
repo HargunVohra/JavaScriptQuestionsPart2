@@ -1,0 +1,20 @@
+<!-- Q104) Write a JavaScript program to test a value, x, against a predicate function. If true, return fn(x). Else, return x.
+Return a function expecting a single value, x, that returns the appropriate value based on pred.
+Return a function expecting a single value, x, that returns the appropriate value based on pred. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to test a value, x, against a predicate function. If true, return fn(x). Else, return x.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const when = (pred, whenTrue) => x => (pred(x) ? whenTrue(x) : x);
+        const doubleEvenNumbers = when(x => x % 2 === 0, x => x * 2);
+        console.log(doubleEvenNumbers(2));
+        console.log(doubleEvenNumbers(1));
+    </script>
+</body>
+</html>

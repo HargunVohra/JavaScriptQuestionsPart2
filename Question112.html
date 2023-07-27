@@ -1,0 +1,35 @@
+<!-- Write a JavaScript program to unflatten an object with the paths for keys.
+Use nested Array.prototype.reduce() to convert the flat path to a leaf node.
+Use String.prototype.split('.') to split each key with a dot delimiter and Array.prototype.reduce() to add objects against the keys.
+If the current accumulator already contains a value against a particular key, return its value as the next accumulator.
+Otherwise, add the appropriate key-value pair to the accumulator object and return the value as the accumulator. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to unflatten an object with the paths for keys.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const unflattenObject = obj =>
+        Object.keys(obj).reduce((acc, k) => {
+            if (k.indexOf('.') !== -1) {
+                const keys = k.split('.');
+                Object.assign(
+                    acc,
+                    JSON.parse(
+          '{' +
+            keys.map((v, i) => (i !== keys.length - 1 ? `"${v}":{` : `"${v}":`)).join('') +
+            obj[k] +
+            '}'.repeat(keys.length)
+        )
+                );
+            } else acc[k] = obj[k];
+            return acc;
+        }, {});
+        console.log(unflattenObject({ 'a.b.c': 1, d: 1}));
+    </script>
+</body>
+</html>

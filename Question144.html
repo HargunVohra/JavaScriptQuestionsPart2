@@ -1,0 +1,18 @@
+<!-- Q144) Write a JavaScript program to get an array of elements that appear in both arrays.
+Use Array.prototype.includes() to determine values that are not part of values.
+Use Array.prototype.filter() to remove them. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to get an array of elements that appear in both arrays.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const similarity = (arr, values) => arr.filter(v => values.includes(v));
+        console.log(similarity([1, 2, 3], [1, 2, 4]))
+    </script>;
+</body>
+</html>

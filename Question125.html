@@ -1,0 +1,19 @@
+<!-- Q125) Write a JavaScript program that converts float-point arithmetic to decimal form, and creates a comma separated string from a number.
+Use Number.prototype.toLocaleString() to convert the number to decimal mark format. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program that converts float-point arithmetic to decimal form, and creates a comma separated string from a number.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const toDecimalMark = num => num.toLocaleString('en-US');
+        console.log(toDecimalMark(12305030388.9087));
+        console.log(toDecimalMark(123.2264));
+        console.log(toDecimalMark(-100.10));
+    </script>
+</body>
+</html>

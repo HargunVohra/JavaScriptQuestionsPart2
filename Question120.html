@@ -1,0 +1,28 @@
+<!-- Q120) Write a JavaScript program to convert a string to snake case.
+Note: Break the string into words and combine them adding _ as a separator, using a regexp.
+Use String.prototype.match() to break the string into words using an appropriate regexp.
+Use Array.prototype.map(), Array.prototype.slice(), Array.prototype.join() and String.prototype.toLowerCase() to combine them, adding _ as a separator. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to convert a string to snake case.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2
+        const toSnakeCase = str =>
+        str && 
+        str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+        .map(x => x.toLowerCase())
+        .join('_');
+
+        console.log(toSnakeCase('camelCase'));
+        console.log(toSnakeCase('some text'));
+        console.log(toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens'));
+        console.log(toSnakeCase('AllThe-small Things'));
+        console.log(toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'));
+    </script>
+</body>
+</html>

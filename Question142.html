@@ -1,0 +1,25 @@
+<!-- Q142) Write a JavaScript program to get the lowest index at which values should be inserted into an array in order to maintain its sorting order.
+Note: Check if the array is sorted in descending order (loosely).
+Loosely check if the array is sorted in descending order.
+Use Array.prototype.findIndex() to find the appropriate index where the element should be inserted. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to get the lowest index at which values should be inserted into an array in order to maintain its sorting order.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const sortedIndex = (arr, n) => {
+            const isDescending = arr[0] > arr[arr.length - 1];
+            const index = arr.findIndex(el => (isDescending ? n >= el : n <= el));
+            return index === -1 ? arr.length : index;
+        };
+
+        console.log(sortedIndex([5, 3, 2, 1], 4));
+        console.log(sortedIndex([30, 50], 40));
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!-- Q105) Write a JavaScript program that returns true if the given value is a number, false otherwise.
+Use parseFloat() to try to convert n to a number.
+Use !Number.isNaN() to check if num is a number.
+Use Number.isFinite() to check if num is finite.
+Use Number() and the loose equality operator (==) to check if the coercion holds. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program that returns true if the given value is a number, false otherwise.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
+        console.log(validateNumber('200'));
+        console.log(validateNumber('10'));
+        console.log(validateNumber('abc'));
+    </script>
+</body>
+</html>

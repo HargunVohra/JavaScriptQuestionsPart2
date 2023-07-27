@@ -1,0 +1,34 @@
+<!-- Q124) Write a JavaScript program to reduce a given Array-like into a value hash (keyed data store).
+Note: Given an Iterable or Array-like structure, call Array.prototype.reduce.call() on the provided object to step over it and return an Object, keyed by the reference value.
+Given an iterable object or array-like structure, call Array.prototype.reduce.call() on the provided object to step over it and return an Object, keyed by the reference value. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to reduce a given Array-like into a value hash (keyed data store).</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2
+        const toHash = (object, key) =>
+        Array.prototype.reduce.call(
+            object,
+            (acc, data, index) => ((acc[!key ? index : data[key]] = data), acc),
+            {}
+        );
+        toHash([4, 3, 2, 1]);
+        toHash([{ a: 'label' }], 'a');
+        let users = [{ id: 1, first: 'Jon' }, { id: 2, first: 'Joe' }, { id: 3, first: 'Moe' }];
+        let managers = [{ manager: 1, employees: [2, 3] }];
+        managers.forEach(
+            manager =>
+            (manager.employees = manager.employees.map(function(id) {
+                return this[id];
+            }, toHash(users, 'id')))
+        );
+        managers;
+        console.log(managers);
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- Q139) Write a JavaScript program to split a multiline string into an array of lines.
+Use String.prototype.split() and a regular expression to match line breaks and create an array. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to split a multiline string into an array of lines.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const splitLines = str => str.split(/\r?\n/);
+        console.log(splitLines('Original string'));
+        console.log(splitLines('This\nis a\nmultiline\nstring.\n'));
+        console.log(splitLines('This\nis a\nmultiline\nstring.\n'));
+    </script>
+</body>
+</html>

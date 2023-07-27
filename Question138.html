@@ -1,0 +1,20 @@
+<!-- Q138) Write a JavaScript program that takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.
+Note: Use closures and the spread operator (...) to map the array of arguments to the inputs of the function.
+Use a closure and the spread operator (...) to map the array of arguments to the inputs of the function. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program that takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.(ly/2neWfJ2 
+        const spreadOver = fn => argsArr => fn(...argsArr);
+        const arrayMax = spreadOver(Math.max);
+
+        console.log(arrayMax([1, 2, 3]));
+    </script>
+</body>
+</html>

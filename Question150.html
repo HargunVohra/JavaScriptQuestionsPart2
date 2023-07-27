@@ -1,0 +1,18 @@
+<!-- Q150) Write a JavaScript program to run a given array of promises in series.
+Use Array.prototype.reduce() to create a promise chain, where each promise returns the next promise when resolved. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to run a given array of promises in series.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const runPromisesInSeries = ps => ps.reduce((p , next) => p.then(next), Promise.resolve());
+        const delay = d => new Promise(r => setTimeout(r, d));
+        runPromisesInSeries([() => delay(1000), () => delay(2000)]);
+    </script>
+</body>
+</html>

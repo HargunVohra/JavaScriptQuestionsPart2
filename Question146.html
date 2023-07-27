@@ -1,0 +1,20 @@
+<!-- Q146) Write a JavaScript program to create a shallow clone of an object.
+Use Object.assign() and an empty object ({}) to create a shallow clone of the original. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to create a shallow clone of an object.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const shallowClone = obj => Object.assign({}, obj);
+        const a = { x: true, y: 1 };
+        const b = shallowClone(a);
+
+        console.log(b);
+    </script>
+</body>
+</html>

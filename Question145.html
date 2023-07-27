@@ -1,0 +1,26 @@
+<!-- Q145) Write a JavaScript program to randomize the order of array values, returning an updated array.
+Use the Fisher-Yates algorithm to reorder the elements of the array. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to randomize the order of array values, returning an updated array.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const shuffle = ([...arr]) => {
+            let m = arr.length;
+            while (m) {
+                const i = Math.floor(Math.random() * m--);
+                [arr[m], arr[i]] = [arr[i], arr[m]];
+            }
+            return arr;
+        };
+        const foo = [1, 2, 3];
+
+        console.log(shuffle(foo));
+    </script>
+</body>
+</html>

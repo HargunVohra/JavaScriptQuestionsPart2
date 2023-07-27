@@ -1,0 +1,28 @@
+<!-- Q119) Write a JavaScript program to create tomorrow's date in a string representation.
+Use new Date() to get the current date.
+Increment it by one using Date.prototype.getDate() and set the value to the result using Date.prototype.setDate().
+Use Date.prototype.toISOString() to return a string in yyyy-mm-dd format. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to create tomorrow's date in a string representation.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const tomorrow = (long = false) => {
+            let t = new Date();
+            t.setDate(t.getDate() + 1);
+            const ret = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(
+                t.getDate()
+            ).padStart(2, '0')}`;
+            return !long ? ret : `${ret}T00:00:00`;
+        };
+
+        console.log(tomorrow());
+        console.log(tomorrow(true));
+    </script>
+</body>
+</html>

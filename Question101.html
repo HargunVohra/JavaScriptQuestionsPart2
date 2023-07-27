@@ -1,0 +1,24 @@
+<!-- Q101) Write a JavaScript program to return the object associating the properties to the values of a given array of valid property identifiers and an array of values.
+Note: Since an object can have undefined values but not undefined property pointers, the array of properties is used to decide the structure of the resulting object using Array.reduce().
+Associates properties to values, given array of valid property identifiers and an array of values.
+Use Array.prototype.reduce() to build an object from the two arrays.
+If the length of props is longer than values, remaining keys will be undefined.
+If the length of values is longer than props, remaining values will be ignored. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to return the object associating the properties to the values of a given array of valid property identifiers and an array of values.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const zipObject = (props, values) =>
+        props.reduce((obj, prop, index) => ((obj[prop] = values[index]), obj), {});
+        console.log(zipObject(['a', 'b', 'c'], [1, 2]));
+        console.log(zipObject(['a', 'b'], [1, 2, 3]));
+
+    </script>
+</body>
+</html>

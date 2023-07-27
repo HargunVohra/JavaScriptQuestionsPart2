@@ -1,0 +1,20 @@
+<!-- Q103) Write a JavaScript program to convert a given string into an array of words.
+Use String.prototype.split() with a supplied pattern (defaults to non-alpha as a regexp) to convert to an array of strings.
+Use Array.prototype.filter() to remove any empty strings.
+Omit the second argument, pattern, to use the default regexp. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to convert a given string into an array of words.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
+        console.log(words('I love javascript!!'));
+        console.log(words('python, java, php'));
+    </script>
+</body>
+</html>

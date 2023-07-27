@@ -1,0 +1,29 @@
+<!-- Q113) Write a JavaScript program to unescape escaped HTML characters.
+Use String.prototype.replace() with a regexp that matches the characters that need to be unescaped.
+Use the function's callback to replace each escaped character instance with its associated unescaped character using a dictionary (object) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to unescape escaped HTML characters.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const unescapeHTML = str =>
+        str.replace(
+            /&|<|>|'|"/g,
+            tag => 
+            ({
+                '&': '&',
+                '<': '<',
+                '>': '>',
+                ''': "'",
+                '"': '"'
+            }[tag] || tag)
+        );
+        console.log(unescapeHTML('<a href="#">Me & you</a>'));
+    </script>
+</body>
+</html>

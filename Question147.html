@@ -1,0 +1,17 @@
+<!-- Q147) Write a JavaScript program to serialize a cookie name-value pair into a Set-Cookie header string.
+Use template literals and encodeURIComponent() to create the appropriate string. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to serialize a cookie name-value pair into a Set-Cookie header string.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;
+        console.log(serializeCookie('foo', 'bar'));
+    </script>
+</body>
+</html>

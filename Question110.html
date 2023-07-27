@@ -1,0 +1,19 @@
+<!-- Q110) Write a JavaScript program to get every element in any of the two arrays at once.
+Note: Create a Set with all values of a and b and convert to an array.
+Create a new Set() with all values of a and b and convert it to an array. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to get every element in any of the two arrays at once.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const union = (a, b) => Array.from(new Set([...a, ...b]));
+        console.log(union([1, 2, 3], [4, 3, 2]));
+        console.log(union([1, 2, 3], [1, 2, 3]));
+    </script>
+</body>
+</html>

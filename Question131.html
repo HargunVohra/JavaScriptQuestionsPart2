@@ -1,0 +1,18 @@
+<!-- Q131) Write a JavaScript program to get an array with n elements removed from the beginning from a given array.
+Use Array.prototype.slice() to create a slice of the array with n elements taken from the beginning. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to get an array with n elements removed from the beginning from a given array.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+    //#Source https://bit.ly/2neWfJ2 
+    const take = (arr, n = 1) => arr.slice(0, n);
+    console.log(take([1, 2, 3], 5));
+    console.log(take([1, 2, 3], 0));
+    </script> 
+</body>
+</html>

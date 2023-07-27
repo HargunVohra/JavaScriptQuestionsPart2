@@ -1,0 +1,19 @@
+<!-- Q143) Write a JavaScript program to sort the characters of a string Alphabetically.
+Use the spread operator (...), Array.prototype.sort() and String.prototype.localeCompare() to sort the characters in str.
+Recombine using String.prototype.join(''). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to sort the characters of a string Alphabetically.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const sortCharacterInString = str => [...str].sort((a, b) => a.localeCompare(b)).join('');
+        console.log(sortCharacterInString('cabbage'));
+        console.log(sortCharacterInString('a7fs23l1n4o6x'));
+    </script>
+</body>
+</html>

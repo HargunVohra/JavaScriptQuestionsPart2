@@ -1,0 +1,19 @@
+<!-- Q149) Write a JavaScript program to get a random element from an array.
+Use Math.random() to generate a random number.
+Multiply it by Array.prototype.length and round it off to the nearest whole number using Math.floor().
+This method also works with strings. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to get a random element from an array.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const sample = arr => arr[Math.floor(Math.random() * arr.length)];
+        console.log(sample([3, 7, 9, 11]));
+    </script>
+</body>
+</html>

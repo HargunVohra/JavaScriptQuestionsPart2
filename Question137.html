@@ -1,0 +1,26 @@
+<!-- Q137) Write a JavaScript program to perform stable sorting of an array, preserving the initial indexes of items when their values are the same. Returns a new array instead of mutating the original array.
+Use Array.prototype.map() to pair each element of the input array with its corresponding index.
+Use Array.prototype.sort() and a compare function to sort the list, preserving their initial order if the items compared are equal.
+Use Array.prototype.map() to convert back to the initial array items.
+Does not mutate the original array, but returns a new array instead. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to perform stable sorting of an array, preserving the initial indexes of items when their values are the same. Returns a new array instead of mutating the original array.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const stableSort = (Acc, compare) =>
+        arr
+        .map((item, index) => ({ item, index }))
+        .sort((a, b) => compare(a.item, b.item) || a.index - b.index)
+        .map(({ item }) => item);
+
+        const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log(stableSort(arr, () => 0));
+    </script>
+</body>
+</html>

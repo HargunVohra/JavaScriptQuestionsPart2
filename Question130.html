@@ -1,0 +1,18 @@
+<!-- Q130) Write a JavaScript program to remove n elements from the end of a given array.
+Use Array.prototype.slice() to create a slice of the array with n elements taken from the end. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to remove n elements from the end of a given array.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
+
+        console.log(takeRight([1, 2, 3], 2));
+        console.log(takeRight([1, 2, 3]));
+    </script>
+</body>
+</html>

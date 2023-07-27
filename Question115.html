@@ -1,0 +1,18 @@
+<!-- Write a JavaScript program to create a function that accepts up to one argument, ignoring any additional arguments.
+Note: Call the provided function, fn, with just the first argument given.
+Call the provided function, fn, with just the first argument supplied. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to create a function that accepts up to one argument, ignoring any additional arguments.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const unary = fn => val => fn(val);
+        console.log(['6', '8', '10'].map(unary(parseInt)));
+    </script>
+</body>
+</html>

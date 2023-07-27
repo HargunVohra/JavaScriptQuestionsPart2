@@ -1,0 +1,24 @@
+<!-- Q111) Write a JavaScript program to build  an array, using an iterator function and an initial seed value.
+Use a while loop and Array.prototype.push() to call the function repeatedly until it returns false.
+The iterator function accepts one argument (seed) and must always return an array with two elements ([value, nextSeed]) or false to terminate -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to build  an array, using an iterator function and an initial seed value.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const unfold = (fn, seed) => {
+            let result = [],
+            val = [null, seed];
+            while ((val = fn(val[1]))) result.push(val[0]);
+            return result;
+        };
+        var f = n => ( n > 50 ? false : [-n, n + 10]);
+        console.log(unfold(f, 10));
+    </script>
+</body>
+</html>

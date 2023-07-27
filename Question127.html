@@ -1,0 +1,23 @@
+<!-- Q127) Write a JavaScript program to iterate over a callback n times.
+Use Function.prototype.call() to call fn n times or until it returns false.
+Omit the last argument, context, to use an undefined object (or the global object in non-strict mode). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to iterate over a callback n times.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const times = (n, fn, context = undefined) => {
+            let i = 0;
+            while (fn.call(context, i) !== false && ++i < n) {}
+        };
+        var output = '';
+        times(5, i => (output += i));
+        console.log(output);
+    </script>
+</body>
+</html>

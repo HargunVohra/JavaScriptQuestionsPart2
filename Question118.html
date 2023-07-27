@@ -1,0 +1,25 @@
+<!-- Q118) Write a JavaScript program to apply a function against an accumulator and each key in the object (from left to right).
+Use Object.keys() to iterate over each key in the object.
+Use Array.prototype.reduce() to apply the specified function against the given accumulator. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to apply a function against an accumulator and each key in the object (from left to right).</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const transform = (obj, fn, acc) => Object.keys(obj).reduce((a, k) => fn(a, obj[k], k, obj), acc);
+        console.log(transform(
+            { a: 1, b: 2, c: 1 },
+            (r, v, k) => {
+                (r[v] || (r[v] = [])).push(k);
+                return r;
+            },
+            {}
+        ));
+    </script>
+</body>
+</html>
