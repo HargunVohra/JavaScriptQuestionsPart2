@@ -1,0 +1,19 @@
+<!-- Q9) Write a JavaScript program to combine the numbers of a given array into an array containing all combinations.
+Use Array.prototype.reduce() combined with Array.prototype.map() to iterate over elements and combine into an array containing all combinations. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to combine the numbers of a given array into an array containing all combinations.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const powerset = arr => arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
+        console.log(powerset([1, 2]));
+        console.log(powerset([1, 2, 3]));
+        console.log(powerset([1, 2, 3, 4]));
+    </script>
+</body>
+</html>

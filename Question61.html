@@ -1,0 +1,18 @@
+<!-- Q61) Write a JavaScript program to cast the provided value as an array if it's not one.
+Use Array.prototype.isArray() to determine if val is an array and return it as-is or encapsulated in an array accordingly. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to cast the provided value as an array if it's not one.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const castArray = val => (Array.isArray(val) ? val : [val]);
+        console.log(castArray('w3r'));
+        console.log(castArray([100]));
+    </script>
+</body>
+</html>

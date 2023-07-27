@@ -1,0 +1,29 @@
+<!-- Q60) Write a JavaScript program to create a function that invokes the method at a given key of an object. Optionally, add any parameters that are supplied to the beginning of the arguments.
+Return a function that uses Function.prototype.apply() to bind context[fn] to context.
+Use the spread operator (...) to prepend any additional supplied parameters to the arguments. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to create a function that invokes the method at a given key of an object. Optionally, add any parameters that are supplied to the beginning of the arguments.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const bindKey = (context, fn, ...args) =>
+        function() {
+            return context[fn].apply(context, args.concat(...arguments));
+        };
+
+        const freddy = {
+            user: 'fred',
+            greet: function(greeting, punctuation) {
+                return greeting + ' ' + this.user + punctuation;
+            }
+        };
+        const freddyBound = bindKey(freddy, 'greet');
+        console.log(freddyBound('hi', '!'));
+    </script>
+</body>
+</html>

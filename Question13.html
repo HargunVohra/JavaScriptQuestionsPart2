@@ -1,0 +1,20 @@
+<!-- Q13) Write a JavaScript program to convert a given string's length to bytes.
+Convert a given string to a Blob Object.
+Use Blob.size to get the length of the string in bytes. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to convert a given string's length to bytes.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const byte_Size = str => new Blob([str]).size;
+        console.log(byte_Size('123456'));
+        console.log(byte_Size('Hello World'));
+        console.log(byte_Size('Ã¢'));
+    </script>
+</body>
+</html>

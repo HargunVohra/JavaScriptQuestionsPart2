@@ -1,0 +1,18 @@
+<!-- Q89) Write a JavaScript program to negates a predicate function.
+Note: Take a predicate function and apply the not operator (!) to it with its arguments.
+Take a predicate function and apply the not operator (!) to it with its arguments. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to negates a predicate function.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const negate = func => (...args) => !func(...args);
+        console.log([1, 2, 3, 4, 5, 6].filter(negate(n => n % 2 === 0)));
+    </script>
+</body>
+</html>

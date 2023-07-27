@@ -1,0 +1,21 @@
+<!-- Q53) Write a JavaScript program to initialize a two-dimensional array of given size and value.
+Use Array.from() and Array.prototype.map() to generate h rows where each is a new array of size w.
+Use Array.prototype.fill() to initialize all items with value val.
+Omit the last argument, val, to use a default value of null. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to initialize a two-dimensional array of given size and value.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const intialize_2D_Array = (w, h, val = null) => 
+        Array.from({length: h}).map(() => Array.from({ length: w }).fill(val));
+        console.log(intialize_2D_Array(3, 2, 0));
+        console.log(intialize_2D_Array(3, 3, 3));
+    </script>
+</body>
+</html>

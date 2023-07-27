@@ -1,0 +1,20 @@
+<!-- Q63) Write a JavaScript program to clone a given regular expression.
+Use new RegExp(), RegExp.prototype.source and RegExp.prototype.flags to clone the given regular expression. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to clone a given regular expression.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const cloneRegExp = regExp => new RegExp(regExp.source, regExp.flags);
+        const regExp = /lorem ipsum/gi;
+        console.log(regExp);
+        const regExp2 = cloneRegExp(regExp);
+        console.log(regExp2);
+    </script>
+</body>
+</html>

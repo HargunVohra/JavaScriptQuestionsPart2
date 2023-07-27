@@ -1,0 +1,21 @@
+<!-- Q28) Write a JavaScript program to measure the time a function to execute.
+Use Console.time() and Console.timeEnd() to measure the difference between the start and end times to determine how long the callback took to execute. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to measure the time a function to execute.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        const time_taken = callback => {
+            const result = callback();
+            return result;
+        };
+        console.log("Time taken: " + time_taken(() => Math.pow(2, 10)) +" ms");
+        console.log("Time taken: " + time_taken(() => Math.sqrt(225)) +" ms");
+        console.log("Time taken: " + time_taken(() => Math.sqrt((5 * 5) + (6 * 6)))+" ms");
+    </script>
+</body>
+</html>

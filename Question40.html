@@ -1,0 +1,18 @@
+<!-- Q40) Write a JavaScript program to create an array of key-value pair arrays from a given object.
+Use Object.entries() to get an array of key-value pair arrays from the given object. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to create an array of key-value pair arrays from a given object.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2
+        const object_to_pairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
+        console.log(object_to_pairs({ a: 1, b: 2 }));
+        console.log(object_to_pairs({ a: 1, b: 2, c: 3 }));
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- Q14) Write a JavaScript program to replace multiple object keys' names with the values provided.
+Use Object.keys() in combination with Array.prototype.reduce() and the spread operator (...) to get the object's keys and rename them according to keysMap. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to replace multiple object keys' names with the values provided.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const rename_keys = (keysMap, obj) => 
+        Object.keys(obj).reduce(
+            (acc, key) => ({
+                ...acc,
+                ...{ [keysMap[key] || key]: obj[key] }
+            }),
+            {}
+        );
+        const obj = { name: 'Bobo', jpb: 'Programmer', shoeSize: 100 };
+        console.log("Original Object");
+        console.log(obj);
+        console.log("-------------------------------------");
+        result = rename_keys({ name: 'firstName', job: 'Actor' }, obj);
+        console.log("New Object");
+        console.log(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- Q44) Write a JavaScript program to remove false values from a given array.
+Use Array.prototype.filter() to filter out falsy values (false, null, 0, "", undefined, and NaN). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to remove false values from a given array.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const compact = arr => arr.filter(Boolean);
+        console.log(compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]));
+        console.log(compact([false, NaN, 'e' * 23]));
+    </script>
+</body>
+</html>

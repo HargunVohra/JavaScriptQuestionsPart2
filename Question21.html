@@ -1,0 +1,19 @@
+<!-- Q21) Write a JavaScript program to get every nth element in a given array.
+Use Array.prototype.filter() to create a new array that contains every nth element of a given array. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to get every nth element in a given array.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        const every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
+        console.log(every_nth([1, 2, 3, 4, 5, 6], 1));
+        console.log(every_nth([1, 2, 3, 4, 5, 6], 2));
+        console.log(every_nth([1, 2, 3, 4, 5, 6], 3));
+        console.log(every_nth([1, 2, 3, 4, 5, 6], 4));
+    </script>
+</body>
+</html>

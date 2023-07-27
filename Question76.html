@@ -1,0 +1,22 @@
+<!-- Q76) Write a JavaScript program to execute a provided function once for each array element, starting with the array's last element.
+Use Array.prototype.slice() to clone the given array and Array.prototype.reverse() to reverse it.
+Use Array.prototype.forEach() to iterate over the reversed array. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to execute a provided function once for each array element, starting with the array's last element.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const forEachRight = (arr, callback) =>
+        arr
+        .slice(0)
+        .reverse()
+        .forEach(callback);
+        forEachRight([1, 2, 3, 4], val => console.log(val));
+    </script>
+</body>
+</html>

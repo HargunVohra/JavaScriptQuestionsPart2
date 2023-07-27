@@ -1,0 +1,22 @@
+<!-- Q97) Write a JavaScript program to create an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).
+Use Object.keys(obj) and Array.prototype.filter()to remove the keys for which fn returns a falsy value.
+Use Array.prototype.reduce() to convert the filtered keys back to an object with the corresponding key-value pairs.
+The callback function is invoked with two arguments: (value, key). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to create an object composed of the properties the given function returns truthy for. The function is invoked with two arguments: (value, key).</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const pickBy = (obj, fn) =>
+        Object.keys(obj)
+        .filter(k => fn(obj[k], k))
+        .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
+        console.log(pickBy({ a: 1, b: '2', c: 3 }, x => typeof x === 'number'));
+    </script>
+</body>
+</html>

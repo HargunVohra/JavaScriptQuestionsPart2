@@ -1,0 +1,20 @@
+<!-- Q30) Write a JavaScript program to filter out the element(s) of a given array that have one of the specified values.
+Use Array.prototype.includes() to find values to exclude.
+Use Array.prototype.filter() to create an array excluding them. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to filter out the element(s) of a given array that have one of the specified values.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const without = (arr, ...args) => arr.filter(v => !args.includes(v));
+
+        console.log(without([2, 1, 2, 3], 1, 2));
+        console.log(without([2, 1, 2, 3], 3));
+    </script>
+</body>
+</html>

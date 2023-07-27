@@ -1,0 +1,24 @@
+<!-- Q69) Write a JavaScript program to group array elements based on the given function. It return the count of elements in each group.
+Use Array.prototype.map() to map the values of an array to a function or property name.
+Use Array.prototype.reduce() to create an object, where the keys are produced from the mapped results. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to group array elements based on the given function. It return the count of elements in each group.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const countBy = (arr, fn) =>
+        arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val, i) => {
+            acc[val] = (acc[val] || 0) + 1;
+            return acc;
+        }, {});
+        console.log(countBy([6, 10, 100, 10], Math.sqrt));
+        console.log(countBy([6.1, 4.2, 6.3], Math.floor));
+        console.log(countBy(['one', 'two', 'three'], 'length'));
+    </script>
+</body>
+</html>

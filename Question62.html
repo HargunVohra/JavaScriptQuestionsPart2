@@ -1,0 +1,30 @@
+<!-- Q62) Write a JavaScript program to chain asynchronous functions.
+Note: Loop through an array of functions containing asynchronous events, calling next when each asynchronous event has completed.
+Loop through an array of functions containing asynchronous events, calling next when each asynchronous event has completed. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to chain asynchronous functions.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const chainAsync = fns => {
+            let curr = 0;
+            const next = () => fns[curr++](next);
+            next();
+        };
+            chainAsync([
+                next => {
+                    console.log('0 seconds');
+                    setTimeout(next, 1000);
+                },
+                next => {
+                    console.log('1 second');
+                }
+            ]);
+    </script>
+</body>
+</html>

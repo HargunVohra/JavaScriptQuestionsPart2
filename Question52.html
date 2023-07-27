@@ -1,0 +1,24 @@
+<!-- Q52) Write a JavaScript program to group the elements of a given array based on the given function.
+Use Array.prototype.map() to map the values of the array to a function or property name.
+Use Array.prototype.reduce() to create an object, where the keys are produced from the mapped results. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to group the elements of a given array based on the given function.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const group_By = (arr, fn) =>
+        arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val, i) => {
+            acc[val] = (acc[val] || []).concat(arr[i]);
+            return acc;
+        }, {});
+        console.log(group_By([6.1, 4.2, 6.3], Math.sqrt));
+        console.log(group_By([6.1, 4.2, 6.3], Math.floor)); 
+        console.log(group_By(['one', 'two', 'three'], 'length')); 
+    </script>
+</body>
+</html>

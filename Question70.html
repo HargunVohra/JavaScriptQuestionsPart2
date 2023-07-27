@@ -1,0 +1,19 @@
+<!-- Q70) Write a JavaScript program to count a value in an array.
+Use Array.prototype.reduce() to increment a counter each time the specific value is encountered inside the array. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to count a value in an array.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+        console.log(countOccurrences([1, 1, 2, 1, 2, 3], 1));
+        console.log(countOccurrences([1, 1, 2, 1, 2, 3], 2));
+        console.log(countOccurrences([1, 1, 2, 1, 2, 3], 3));
+    </script>
+</body>
+</html>

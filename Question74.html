@@ -1,0 +1,18 @@
+<!-- Q74) Write a JavaScript program to filter out all values from an array for which the comparator function does not return true.
+Use Array.prototype.filter() and Array.prototype.findIndex() to find the appropriate values.
+Omit the last argument, comp, to use a default strict equality comparator. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to filter out all values from an array for which the comparator function does not return true.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const differnceWith = (arr, val, comp) => arr.filter(a => val.findIndex(b => comp(a, b)) === -1);
+        console.log(differnceWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)));
+    </script>
+</body>
+</html>

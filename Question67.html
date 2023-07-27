@@ -1,0 +1,23 @@
+<!-- Q67) Write a JavaScript program to perform left-to-right function composition.
+Use Array.prototype.reduce() to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to perform left-to-right function composition.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+        const add = (x, y) => x + y;
+        const square = x => x*x;
+        const addAndSquare = composeRight(add, square);
+
+        console.log(addAndSquare(1, 2));
+        console.log(addAndSquare(3, 2));
+    </script>
+</body>
+</html>

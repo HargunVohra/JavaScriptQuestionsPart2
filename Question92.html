@@ -1,0 +1,22 @@
+<!-- Q92) Write a JavaScript program to create a function that gets the argument at index n. If n is negative, the nth argument from the end is returned.
+Use Array.prototype.slice() to get the desired argument at index n.
+If n is negative, the nth argument from the end is returned. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to create a function that gets the argument at index n. If n is negative, the nth argument from the end is returned.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const nthArg = n => (...args) => args.slice(n)[0];
+        const third = nthArg(2);
+        third(1, 2, 3);
+        third(1, 2);
+        const last = nthArg(-1);
+        console.log(last(1, 2, 3, 4, 5));
+    </script>
+</body>
+</html>

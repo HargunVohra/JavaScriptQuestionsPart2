@@ -1,0 +1,17 @@
+<!-- Q64) Write a JavaScript program to get the first non-null / undefined argument.
+Use Array.prototype.find() and Array.prototype.includes() to find the first value that is not equal to undefined or null. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to get the first non-null / undefined argument.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_));
+        console.log(coalesce(null, undefined, '', NaN, 'abcd'));
+    </script>
+</body>
+</html>

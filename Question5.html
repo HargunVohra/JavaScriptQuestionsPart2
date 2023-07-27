@@ -1,0 +1,31 @@
+<!-- Q5) Write a JavaScript program to convert an array of objects to a comma-separated value (CSV) string that contains only the columns specified.
+Use Array.prototype.join(delimiter) to combine all the names in columns to create the first row.
+Use Array.prototype.map() and Array.prototype.reduce() to create a row for each object, substituting non-existent values with empty strings and only mapping values in columns.
+Use Array.prototype.join('\n') to combine all rows into a string.
+Omit the third argument, delimiter, to use a default delimiter of,. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to convert an array of objects to a comma-separated value (CSV) string that contains only the columns specified.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2
+        const JSON_to_CSV = (arr, columns, delimiter = ',') => 
+        [
+            columns.join(delimiter),
+            ...arr.map(obj => 
+            columns.reduce(
+                (acc, key) => `${acc}${!acc.length ? '' : delimiter}"${!obj[key] ? '' : obj[key]}"`,
+                ''
+            )
+            )
+        ].join('\n');
+
+        console.log(JSON_to_CSV([{ x: 100, y: 200 }, { x: 300, y:400, z: 500 }, { x: 6 }, { y: 7 }], ['x', 'y']));
+        console.log(JSON_to_CSV([{ x: 100, y: 200 }, { x: 300, y:400, z: 500 }, { x: 6 }, { y: 7 }], ['x', 'y'], ';'));
+    </script>
+</body>
+</html>

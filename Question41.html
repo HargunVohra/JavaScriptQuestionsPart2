@@ -1,0 +1,17 @@
+<!-- Q41) Write a JavaScript program to create an object from the given key-value pairs.
+Use Array.prototype.reduce() to create and combine key-value pairs. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to create an object from the given key-value pairs.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        const object_From_Pairs = arr => arr.reduce((a, v) => ((a[v[0]] = v[1]), a), {});
+        console.log(object_From_Pairs([['a', 1], ['b', 2]]));
+        console.log(object_From_Pairs([[1, 10], [2, 20], [3, 30]]));
+    </script>
+</body>
+</html>

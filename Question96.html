@@ -1,0 +1,18 @@
+<!-- Q96) Write a JavaScript program to pick  the key-value pairs corresponding to the given keys from an object.
+Use Array.prototype.reduce() to convert the filtered/picked keys back to an object with the corresponding key-value pairs if the key exists in the object. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to pick  the key-value pairs corresponding to the given keys from an object.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const pick = (obj, arr) =>
+        arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
+        console.log(pick({ a: 1, b: '2', c: 3 }, ['a', 'c']));
+    </script>
+</body>
+</html>

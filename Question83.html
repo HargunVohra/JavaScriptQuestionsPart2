@@ -1,0 +1,23 @@
+<!-- Q83) Write a JavaScript program to create an updated string with the results of calling a provided function on every character in the called string.
+Use String.prototype.split('') and Array.prototype.map() to call the provided function, fn, for each character in str.
+Use Array.prototype.join('') to recombine the array of characters into a string.
+The callback function, fn, takes three arguments (the current character, the index of the current character and the string mapString was called upon). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to create an updated string with the results of calling a provided function on every character in the called string.</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        //#Source https://bit.ly/2neWfJ2 
+        const mapString = (str, fn) =>
+        str
+        .split('')
+        .map((c, i) => fn(c, i, str))
+        .join('');
+        console.log(mapString('JavaScript exercises', c => c.toUpperCase()));
+    </script>
+</body>
+</html>
